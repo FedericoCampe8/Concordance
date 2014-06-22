@@ -21,6 +21,7 @@ Please, note that the tool is written in C++11 and in order to compile it, you n
 On MacOS X, you may want to install the XCode package. 
 XCode is available from the Mac OS install DVD, or from the Apple Mac Dev Center. 
 For Windows you can use the Cygwin environment that provides all necessary tools.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 — How to run the program —
