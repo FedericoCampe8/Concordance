@@ -185,7 +185,6 @@ Node::fix_node ( Content * content ) {
      * node, otherwise "y" will be inserted in the current node with
      * the recursive call of add_content.
      */
-    
     /// Check which child matches new_contents[ 0 ]
     if ( _content->equal ( new_contents[ 0 ] ) ) {
       for ( auto &child : _children ) {

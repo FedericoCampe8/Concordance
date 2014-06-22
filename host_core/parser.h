@@ -54,7 +54,11 @@ public:
     return _instance;
   }//get_idata_instance
   
-  /// Add delimiter to tokenizer
+  /*
+   * Add delimiter to tokenizer.
+   * @todo: add possibility to add
+   * delimiters from command line.
+   */
   void add_delimiter ( std::string );
   
   /// Check if a given char has to be skipped

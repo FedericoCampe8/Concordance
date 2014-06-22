@@ -43,4 +43,5 @@ The current implementation allows the user to choose two different data structur
 These data structures have different characteristics in terms of space/time.
 For example, a prefix-tree performs operations in O(k) where “k” is maximum length of the string in the text, while a rb-tree performs operations in O(log n) time where “n” is the number of string in the text.
 
+These files have been tested on Mac and Linux.
 For any questions, feel free to write at: campe8@nmsu.edu.
