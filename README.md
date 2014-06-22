@@ -17,7 +17,7 @@ To try some test cases do the following steps:
 	make TEST=1 PRG=parser_test
 to compile the files depending on which test you would like to execute.
 
-Please, note that the tool is written in C++11 and in order to compile it, you need a standard Unix toolchain including a bash-compatible shell, and GNU make. 
+Please, note that the tool is written in C++11 and, in order to compile it, you need a standard Unix toolchain including a bash-compatible shell, and GNU make. 
 On MacOS X, you may want to install the XCode package. 
 XCode is available from the Mac OS install DVD, or from the Apple Mac Dev Center. 
 For Windows you can use the Cygwin environment that provides all necessary tools.
