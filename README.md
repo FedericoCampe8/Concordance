@@ -40,8 +40,11 @@ A concordance is a bit like an index: It’s an alphabetical list of all the wor
 complete with citations of where each word appears (e.g., the line, page or sentence number). 
 To sort the words the program uses and internal data structure that can be chosen by the user.
 The current implementation allows the user to choose two different data structures:
+
 1) A Prefix Tree;
+
 2) A Red Black Tree.
+
 These data structures have different characteristics in terms of space/time.
 For example, a prefix-tree performs operations in O(k) where “k” is maximum length of the string in the text, while a rb-tree performs operations in O(log n) time where “n” is the number of string in the text.
 
