@@ -125,7 +125,6 @@ Input_data::get_store_type () {
 
 void
 Input_data::print_help () {
-  string spaces = "        ";
   cout << "Usage: ./concordance -i <infile> [options]\n" << endl;
   cout << "          Options           |          Description      \n";
   cout << "=========================== | ===========================\n";
