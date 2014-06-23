@@ -9,7 +9,7 @@
  * read from the input file.          *
  * Otherwise it is an internal node.  *
  * Nodes can be split in children     *
- * during insertion of new tokens     *
+ * during insertion of new tokens.    *
  **************************************/
 #ifndef CONCORDANCE_NODE__
 #define CONCORDANCE_NODE__
@@ -36,8 +36,8 @@ protected:
    * Check if a "prefix" of the current content is present
    * in one of the children; i.e., it checks if one of the
    * children can be a root for the current content.
-   * It returns x = -1 if the root is not present or x >= 0,
-   * where x is the child corresponding to the root.
+   * It returns iterator::end() if the root is not present or the
+   * iterator pointing to the child corresponding to the root.
    */
   std::list< Node * >::iterator is_root_present ( const Content * );
   
