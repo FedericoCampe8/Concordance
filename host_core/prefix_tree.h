@@ -18,7 +18,7 @@
  * is the maximum length of the strings in    *
  * the set. Visiting the tree takes time      *
  * O(nk), where n is the number of the        *
- * strings in the set. Space is O(nk)         *
+ * strings in the set. Space is O(nk).        *
  **********************************************/
 #ifndef CONCORDANCE_PREFIX_TREE__
 #define CONCORDANCE_PREFIX_TREE__
