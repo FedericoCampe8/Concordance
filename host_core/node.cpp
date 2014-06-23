@@ -200,7 +200,7 @@ Node::fix_node ( Content * content ) {
           insert_child ( new_child );
           break;
         }
-      }
+      }//for
     }
     else {
       /// No match for "y", proceed recursively
