@@ -30,22 +30,15 @@ OBJECTS = $(SOURCES:%.cpp=%.o)
 # ---------------------------------------------------------------------
 CC = g++
 #CC = clang++
-DEPEND = g++ -MM
 CCOPT =    # -Wall -W -Wno-sign-compare -ansi -pedantic -Werror -Wno-deprecated
-LINKOPT =
 
 ## debug, don't optimize 
+# -m64: generate code for 64 bit env. Use -m32 for a 32 bit env.
+# -DIL_STD -> #define IL_STD 1. Used to enable some STL features
 CCOPT   += -m64 -DIL_STD
 
 ## debug, optimize
-## use --ptxas-options=-v for cuda (verbose for each kernel)
-## use -ftz=false -prec-div=true -prec-sqrt=true
-## -L /usr/local/cuda/lib -lcurand
-## –use_fast_math
 CCOPT += -O3 -std=c++0x 
-LINKOPT += -gx
-
-PROFOPT = -pg -O2 -DNDEBUG
 
 vpath %.o obj
 
