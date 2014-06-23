@@ -17,10 +17,13 @@
 
 class Data_store {
 protected:
-  /// Options
-  bool _verbose;
-  bool _timer;
-  std::string _out_file;
+  /*
+   * Options,
+   * @note: default values - C++11 feature.
+   */
+  bool _verbose = false;
+  bool _timer   = false;
+  std::string _out_file = "";
   /// Variables for options
   timeval _time_stats;
   double  _time_start, _total_time;
