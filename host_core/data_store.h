@@ -18,7 +18,7 @@
 class Data_store {
 protected:
   /*
-   * Options,
+   * Options for Data_store.
    * @note: default values - C++11 feature.
    */
   bool _verbose = false;
