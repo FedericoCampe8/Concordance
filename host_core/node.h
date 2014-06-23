@@ -81,7 +81,7 @@ public:
   int  get_level () const;
   void set_level ( int );
   /*
-   * Increase the level of the children:
+   * Increase (recursively) the level of the children:
    * useful for splitting edges in the tree.
    */
   void increase_children_level ( int );

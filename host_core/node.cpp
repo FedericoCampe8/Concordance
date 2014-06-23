@@ -63,7 +63,7 @@ Node::increase_children_level ( int increment ) {
 int
 Node::get_glb_id () const {
   return _gbl_node_id;
-}//get_id
+}//get_glb_id
 
 int
 Node::get_id () const {
