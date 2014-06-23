@@ -187,20 +187,21 @@ Node::fix_node ( Content * content ) {
      */
     /// Check which child matches new_contents[ 0 ]
     if ( _content->equal ( new_contents[ 0 ] ) ) {
+      bool is_a_match = false;
       for ( auto &child : _children ) {
         if ( child->match_root ( new_contents[ 0 ] ) ) {
           /// A match has been found: proceed recursively with the right child
           child->add_content ( new_contents[ 0 ] );
-          break;
-        }
-        else {
-          /// If no child matches new_contents[ 0 ] add it to _children
-          Node * new_child = new Node ( new_contents[ 0 ] );
-          new_child->set_level ( get_level() + 1 );
-          insert_child ( new_child );
+          is_a_match = true;
           break;
         }
       }//for
+      if ( !is_a_match ) {
+        /// If no child matches new_contents[ 0 ] add it to _children
+        Node * new_child = new Node ( new_contents[ 0 ] );
+        new_child->set_level ( get_level() + 1 );
+        insert_child ( new_child );
+      }
     }
     else {
       /// No match for "y", proceed recursively
