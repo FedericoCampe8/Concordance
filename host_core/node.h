@@ -43,7 +43,7 @@ protected:
   
   /*
    * Given a content,
-   * find the index of the preeceding root
+   * find the index of the preeceding content in children.
    */
   std::list< Node * >::iterator find_lower_root ( const Content * );
   bool equal_root ( const Content * );
