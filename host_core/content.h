@@ -18,7 +18,7 @@ public:
   virtual ~Content() {};
   
   /*
-   * Methods used for comparing contents in the tree.
+   * Methods used for comparing contents in the data store.
    * These methods are used for sorting the contents/children.
    */
   virtual bool less  ( const Content* ) const = 0;
@@ -28,7 +28,7 @@ public:
   virtual bool match ( const Content* ) const = 0;
   
   /*
-   * Return the size of the base object.
+   * Return the size of the base object representing the content.
    * This is useful to organize or print contents.
    */
   virtual size_t get_size () const = 0;
@@ -66,9 +66,11 @@ public:
    * @note: the above "print" prints all the info related to 
    * the content, while "print_info" can be customized by the client
    * to print only some information related to the content.
+   * @note: get_info is the same as print_info but returns a 
+   * string representing the information.
    */
-  virtual void   print_info      () const = 0;
-  virtual std::string get_info   () const = 0;
+  virtual void        print_info () const {}
+  virtual std::string get_info   () const { return ""; }
 };
 
 #endif
