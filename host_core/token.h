@@ -1,9 +1,9 @@
-/**************************************
- * Token:                             *
- * this class represents the concrete *
- * implementation of a content obj    *
- * within a node of the Prefix Tree.  *
- **************************************/
+/*****************************************
+ * Token:                                *
+ * this class represents the concrete    *
+ * implementation of a content obj       *
+ * within a node stored in a data store. *
+ *****************************************/
 #ifndef CONCORDANCE_TOKEN__
 #define CONCORDANCE_TOKEN__
 
