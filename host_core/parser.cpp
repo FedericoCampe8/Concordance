@@ -18,7 +18,7 @@ _current_line    ( -1 ),
 _token           ( "" ) {
   _c_token     = nullptr;
   _parsed_line = nullptr;
-  _delimiters = " ";
+  _delimiters = " \t\r\n";
 }//-
 
 void
@@ -37,7 +37,6 @@ Parser::analyze_token () {
 #ifdef PARSER_DBG
   cout << "#log: analyze_token() - char* : " <<
   _c_token << endl;
-  getchar();
 #endif
   /*
    * Next char is '\0'?
@@ -129,7 +128,6 @@ Parser::analyze_token () {
 #ifdef PARSER_DBG
   cout << "#log: analyze_token() - return: " <<
   _token << endl;
-  getchar();
 #endif
   return _token;
 }//analyze_token
@@ -172,7 +170,7 @@ Parser::get_current_line () {
 Content *
 Parser::get_next_content () {
   /// Open stream (if not already opened)
-  if ( !_open_file ) open();
+  if ( !_open_file ) { open(); }
   
   /*
    * Check last read: 
@@ -180,6 +178,7 @@ Parser::get_next_content () {
    * get a new string to tokenize.
    */
   if ( _c_token == nullptr ) {
+
     /// Set position on file to the most recent position
     _if_stream->seekg ( _curr_pos );
     string line;
@@ -188,8 +187,10 @@ Parser::get_next_content () {
      * to parse and, if it is the case, get it.
      */
     if ( getline ( *_if_stream, line ) ) {
+      while ( line.size() == 0 ) {
+        getline ( *_if_stream, line );
+      }
       _more_elements = true;
-      
       /// Update position
       _curr_pos = _if_stream->tellg();
       
@@ -200,7 +201,6 @@ Parser::get_next_content () {
       /// Allocate memory for the current line
       _parsed_line = new char [ line.length() + 1 ];
       strcpy ( _parsed_line, line.c_str() );
-      
        /// Init internal state of the tokenizer
       _c_token = strtok ( _parsed_line , _delimiters.c_str() );
       _token = analyze_token();
@@ -221,11 +221,13 @@ Parser::get_next_content () {
       return nullptr;
     }
   }
+
   /*
    * The line is not completely parsed:
    * get next token.
    */
   _c_token = strtok ( NULL , _delimiters.c_str() );
+  
   /*
    * If the string is terminated:
    * prepare next one.
