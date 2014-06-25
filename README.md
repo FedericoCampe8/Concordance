@@ -27,10 +27,15 @@ For Windows you can use the Cygwin environment that provides all necessary tools
 %%%%%%%%%%%%%%%%%%%%%% ------  JAVA ------  %%%%%%%%%%%%%%%%%%%%%%%%
 Just run
 	java -jar Concordance.jar -i <input_file_name>
+	
 or
+
 	java -jar Concordance.jar -h
+	
 to print a help message.
+
 The code has been tested on java version java version "1.6.0_65" and "1.7.0_51".
+
 It requires JDK 1.6.
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
