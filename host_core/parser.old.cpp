@@ -188,13 +188,23 @@ Parser::get_next_content () {
      */
     if ( getline ( *_if_stream, line ) ) {
       while ( line.size() == 0 ) {
-        getline ( *_if_stream, line );
+        if ( !getline ( *_if_stream, line ) ) {
+          /*
+           * No more line available:
+           * close file, clear everything and exit.
+           */
+          _more_elements = false;
+          if ( _c_token     != nullptr ) free ( _c_token );
+          if ( _parsed_line != nullptr ) delete [] _parsed_line;
+          close();
+          return nullptr;
+        }
       }
       _more_elements = true;
       /// Update position
       _curr_pos = _if_stream->tellg();
       
-     /// Delete previous allocate memory
+      /// Delete previous allocate memory
       if ( _parsed_line != nullptr ) {
         delete [] _parsed_line;
       }

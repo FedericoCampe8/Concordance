@@ -19,6 +19,7 @@ HEADERS_CORE=node.h\
 	     concordance_visitor.h\
 	     factory_store.h\
 	     parser.h\
+	     tokenization.h\
 
 HEADERS=$(HEADERS_CORE:%.h=${H_FOLDER}/%.h)
 

@@ -1,21 +1,26 @@
-/****************************************************
- * Parser class:                                    *
- * Singleton class used for parsing the input file  *
- * given by the user.                               *
- * It has methods to tokenize a text and give them  *
- * back to the client.                              *
- ****************************************************/
+/*********************************************************
+ * Parser class:                                         *
+ * Singleton class used for parsing the input file       *
+ * given by the user.                                    *
+ * It has methods to tokenize a text and give them       *
+ * back to the client.                                   *
+ * @todo: implement as an observer where the subject     *
+ * is the tokenizer that asks/requires lines to tokenize *
+ *********************************************************/
 
 #ifndef CONCORDANCE_PARSER_
 #define CONCORDANCE_PARSER_
 
 #include "globals.h"
 #include "content.h"
+#include "tokenization.h"
 
 class Parser {
 private:
   /// Static instance for singleton obj
   static Parser* _instance;
+  /// Tokenizer
+  Tokenization* tokenizer;
   /// Input stream (from file)
   std::ifstream  * _if_stream;
   std::string _input_path;
@@ -25,10 +30,6 @@ private:
   bool _new_line;
   /// String token to return
   std::string _token;
-  /// Token returned by strtok
-  char * _c_token;
-  /// Line read from file (i.e., getline)
-  char * _parsed_line;
   /// "Semantic" number of lines read so far
   int _current_line;
   /// Delimiter to use to tokenize words
@@ -60,18 +61,6 @@ public:
    * delimiters from command line.
    */
   void add_delimiter ( std::string );
-  
-  /// Check if a given char has to be skipped
-  bool avoid_char ( char );
-  
-  /*
-   * Analyze token:
-   * this function acts like a filter.
-   * It analyzes _c_token and returns
-   * a string corresponding to the token cleaned from
-   * useless chars.
-   */
-  std::string analyze_token ();
   
   /*
    * Check if the internal status has more tokens to
