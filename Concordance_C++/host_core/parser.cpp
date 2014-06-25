@@ -51,6 +51,7 @@ Content *
 Parser::get_next_content () {
   /// Open stream (if not already opened)
   if ( !_open_file ) { open(); }
+  if ( !_open_file ) { return nullptr; }
   
   /* 
    * Check if previous call of the method started to
