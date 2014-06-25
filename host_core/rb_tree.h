@@ -13,13 +13,6 @@
  * Printing the elements of the tree takes        *
  * O(n) time and the elements are printed         *
  * following the ordering used for insertion.     *
- * Prefix tree.                                   *
- * It starts from a root (node rep.               *
- * an empty string or content) and then it adds   *
- * nodes performing insertion and/or splitting.   *
- * Visint the tree, the content of the tree       *
- * is printed following the ordering of the       *
- * nodes.                                         *
  **************************************************/
 #ifndef CONCORDANCE_RB_TREE__
 #define CONCORDANCE_RB_TREE__
