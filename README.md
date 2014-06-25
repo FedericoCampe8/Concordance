@@ -26,6 +26,7 @@ For Windows you can use the Cygwin environment that provides all necessary tools
 
 %%%%%%%%%%%%%%%%%%%%%% ------  JAVA ------  %%%%%%%%%%%%%%%%%%%%%%%%
 Just run
+
 	java -jar Concordance.jar -i <input_file_name>
 	
 or
