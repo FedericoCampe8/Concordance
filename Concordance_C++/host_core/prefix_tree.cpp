@@ -10,6 +10,7 @@ Prefix_tree::Prefix_tree () {
   _root = new Node();
 }//-
 
+//@todo: use shared_ptr
 Prefix_tree::~Prefix_tree () {
   delete _root;
   _root = nullptr;
