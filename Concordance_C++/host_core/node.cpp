@@ -21,6 +21,7 @@ _node_level ( 0 ) {
  _node_id = _gbl_node_id++;
 }//-
 
+//@todo: use shared_ptr
 Node::~Node () {
   delete _content;
   _content = nullptr;
